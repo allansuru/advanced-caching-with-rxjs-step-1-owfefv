@@ -12,11 +12,13 @@ import { JokeService, Joke } from '../joke.service';
 })
 export class JokeListComponent implements OnInit {
   jokes$: Observable<Array<Joke>>;
+  jokes2$: Observable<Array<Joke>>;
 
   constructor(private jokeService: JokeService) { }
 
   ngOnInit() {
     this.jokes$ = this.jokeService.jokes;
+    this.jokes2$ = this.jokeService.jokes2;
   }
 
   @Memoize()
